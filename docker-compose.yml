@@ -1,0 +1,18 @@
+version: "2.4"
+services:
+  app:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/app
+    ports:
+      - "${WA_PORT}:${WA_PORT}"
+    mem_limit: 256mb
+    command:
+      [
+        "gunicorn",
+        "-cfile:gunicorn.ini",
+        "-b",
+        "${WA_HOST}:${WA_PORT}",
+        "init:app"
+      ]
