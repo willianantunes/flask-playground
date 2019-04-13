@@ -11,7 +11,13 @@ As the name says, it's a playground project to see some power of [Flask](https:/
 
 ## Details
 
-It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/).
+It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/). Try it out on:
+
+- https://developer.github.com/v4/explorer/
+
+To get your keys:
+
+- https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql
 
 ## Running it
 
