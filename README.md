@@ -8,3 +8,24 @@
 ---
 
 As the name says, it's a playground project to see some power of [Flask](https://github.com/pallets/flask).
+
+## Details
+
+It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/).
+
+## Running it
+
+- TODO
+
+## Tests
+
+- TODO
+
+## References
+
+- [Flask Web Development: Developing Web Applications with Python](https://www.amazon.com/Flask-Web-Development-Developing-Applications/dp/1449372627)
+    - https://github.com/miguelgrinberg/flasky
+    - https://github.com/miguelgrinberg/oreilly-intro-to-flask-video
+    - https://github.com/miguelgrinberg/oreilly-flask-apis-video
+- [Fluent Python: Clear, Concise, and Effective Programming](https://www.amazon.com/Fluent-Python-Concise-Effective-Programming/dp/1491946008)
+    - https://github.com/fluentpython
