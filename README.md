@@ -11,6 +11,8 @@ As the name says, it's a playground project to see some power of [Flask](https:/
 
 ## Details
 
+This project uses `pipenv`, so you must have it (see how [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today)). [It is the recommended tool to work with dependency management by python.org](https://packaging.python.org/guides/tool-recommendations/).
+
 It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/). Try it out on:
 
 - https://developer.github.com/v4/explorer/
@@ -21,11 +23,25 @@ To get your keys:
 
 ## Running it
 
-- TODO
+Do not forget to update `WA_GITHUB_API_TOKEN` with your API Token.
+
+Execute the following command:
+
+    pipenv run python init.py
+
+Or if you prefer:
+
+    docker-compose up
 
 ## Tests
 
-- TODO
+You can run directly with `pytest`
+
+    pipenv run pytest
+
+Or with `tox`:
+
+    pipenv run tox
 
 ## References
 
