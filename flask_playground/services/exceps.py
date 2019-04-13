@@ -1,0 +1,2 @@
+class GithubGraphqlApiNotProperlyConfiguredException(Exception):
+    pass

@@ -13,11 +13,13 @@ pytest = "*"
 pytest-mock = "*"
 pytest-cov = "*"
 tox = "*"
+pytest-env = "*"
 
 [packages]
 flask = "*"
 gunicorn = "*"
 gevent = "*"
+gql = "*"
 
 [requires]
 python_version = "3.7"
