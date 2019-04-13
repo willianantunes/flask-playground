@@ -21,6 +21,7 @@ gunicorn = "*"
 gevent = "*"
 gql = "*"
 requests = "*"
+python-json-logger = "*"
 
 [requires]
 python_version = "3.7"
