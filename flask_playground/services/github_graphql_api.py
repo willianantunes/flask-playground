@@ -8,6 +8,7 @@ from gql.transport.requests import RequestsHTTPTransport
 
 from flask_playground.config.settings import GITHUB_API_TOKEN
 from flask_playground.config.settings import GITHUB_GRAPHQL_ENDPOINT
+from flask_playground.services.exceps import GithubGraphqlApiCallException
 from flask_playground.services.exceps import GithubGraphqlApiNotProperlyConfiguredException
 
 logger = logging.getLogger(__name__)
@@ -27,7 +28,7 @@ def _execute(request_to_be_executed: Callable) -> Any:
         return request_to_be_executed()
     except Exception as e:
         logger.exception(f"An error of type {type(e)} was caught during execution: {e.args}")
-        raise GithubGraphqlApiNotProperlyConfiguredException("An API call is broken or wrong")
+        raise GithubGraphqlApiCallException("An API call is broken or wrong")
 
 
 def total_number_of_followers(github_username_login: str) -> int:

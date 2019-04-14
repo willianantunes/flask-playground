@@ -3,12 +3,13 @@ import os
 import pytest
 
 from flask_playground.services import github_graphql_api
+from flask_playground.services.exceps import GithubGraphqlApiCallException
 from flask_playground.services.exceps import GithubGraphqlApiNotProperlyConfiguredException
 
 
 def test_should_throw_exception_when_user_does_not_exist():
 
-    with pytest.raises(GithubGraphqlApiNotProperlyConfiguredException) as exception:
+    with pytest.raises(GithubGraphqlApiCallException) as exception:
         github_graphql_api.total_number_of_followers("this-user-indeed-does-not-exist")
 
     assert exception.value.args[0] == "An API call is broken or wrong"
@@ -55,6 +56,6 @@ def test_should_retrieve_most_stargazed_projects():
         "description": "Yet another Django GraphQL Playground project",
     }
     assert result[2] == {
-        "projectsUrl": "https://github.com/willianantunes/spring-boot-vuejs/projects",
-        "description": "An honest CRUD project to know how Vue.js works",
+        "projectsUrl": "https://github.com/willianantunes/flask-playground/projects",
+        "description": "One drop at a time? Let's see if that's true",
     }
