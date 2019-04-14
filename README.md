@@ -11,8 +11,6 @@ As the name says, it's a playground project to see some power of [Flask](https:/
 
 ## Details
 
-This project uses `pipenv`, so you must have it (see how [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today)). [It is the recommended tool to work with dependency management by python.org](https://packaging.python.org/guides/tool-recommendations/).
-
 It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/). Try it out on:
 
 - https://developer.github.com/v4/explorer/
@@ -20,6 +18,16 @@ It's based on [GitHub GraphQL API v4](https://developer.github.com/v4/). Try it 
 To get your keys:
 
 - https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql
+
+## Preparing your dev environemnt
+
+This project uses `pipenv`, so you must have it (see how [here](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today)). [It is the recommended tool to work with dependency management by python.org](https://packaging.python.org/guides/tool-recommendations/).
+
+At the root of project, issue the following command:
+
+    pipenv install --dev --ignore-pipfile
+
+The option `--ignore-pipfile` is used to guarantee that you get the dependencies from the versions presented in `Pipfile.lock`. Thus it will make sure you get the same stuff as me :)
 
 ## Running it
 
