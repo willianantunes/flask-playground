@@ -40,3 +40,21 @@ def test_should_throw_exception_if_required_properties_are_missing(monkeypatch):
         github_graphql_api._get_client()
 
     assert exception.value.args[0] == "Token and endpoint properties are required"
+
+
+def test_should_retrieve_most_stargazed_projects():
+    result = github_graphql_api.most_stargazed_projects("willianantunes", 3)
+
+    assert len(result) == 3
+    assert result[0] == {
+        "projectsUrl": "https://github.com/willianantunes/honesto-sqn/projects",
+        "description": "Receba notificações de gastos suspeitos do seu político",
+    }
+    assert result[1] == {
+        "projectsUrl": "https://github.com/willianantunes/django-graphql-playground/projects",
+        "description": "Yet another Django GraphQL Playground project",
+    }
+    assert result[2] == {
+        "projectsUrl": "https://github.com/willianantunes/spring-boot-vuejs/projects",
+        "description": "An honest CRUD project to know how Vue.js works",
+    }

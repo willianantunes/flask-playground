@@ -42,6 +42,25 @@ def total_number_of_followers(github_username_login: str) -> int:
             }}        
         """
     )
-
     result = _execute(lambda: _get_client().execute(query))
     return result["user"]["followers"]["totalCount"]
+
+
+def most_stargazed_projects(github_username_login: str, number_of_projects_to_retrieve: int):
+    query = gql(
+        f"""
+            query threeMostStargazedProjects($data: RepositoryOrder!) {{
+              user(login: "{github_username_login}") {{
+                repositories(first: {number_of_projects_to_retrieve}, orderBy: $data) {{
+                  nodes {{
+                    projectsUrl
+                    description
+                  }}
+                }}
+              }}
+            }}       
+        """
+    )
+    query_variables = {"data": {"field": "STARGAZERS", "direction": "DESC"}}
+    result = _execute(lambda: _get_client().execute(query, variable_values=query_variables))
+    return result["user"]["repositories"]["nodes"]
